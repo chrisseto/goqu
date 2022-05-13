@@ -62,7 +62,11 @@ func (dw DialectWrapper) DB(db SQLDatabase) *Database {
 	return newDatabase(dw.dialect, db)
 }
 
-func New(dialect string, db SQLDatabase) *Database {
+func New(dialect string, db SQL) *DSL {
+	return newDSL(dialect, db)
+}
+
+func NewDB(dialect string, db SQLDatabase) *Database {
 	return newDatabase(dialect, db)
 }
 
